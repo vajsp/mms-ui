@@ -1,0 +1,22 @@
+{
+  "name": "myview",
+  "version": "1.0.0",
+  "description": "可视化组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vajsp/myView.git"
+  },
+  "author": "mmq91@foxmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vajsp/myView/issues"
+  },
+  "homepage": "https://github.com/vajsp/myView#readme",
+  "dependencies": {
+    "rollup": "^2.32.0"
+  }
+}
