@@ -1,6 +1,8 @@
 const path = require('path')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
+const babel = require('rollup-plugin-babel')
+const json = require('rollup-plugin-json')
 
 const inputPath = path.resolve(__dirname, './src/index.js')
 const outUmdPath = path.resolve(__dirname, './dist/myView.js')
@@ -17,9 +19,15 @@ module.exports = {
     {
       file: outEsPath,
       format: 'es',
-      name: 'myView',
     },
   ],
-  plugins: [resolve(), commonjs()],
+  plugins: [
+    resolve(),
+    commonjs(),
+    babel({
+      exclude: 'node_modules/**',
+    }),
+    json(),
+  ],
   external: ['vue'],
 }
