@@ -1,5 +1,6 @@
 const path = require('path')
 const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs')
 
 const inputPath = path.resolve(__dirname, './src/index.js')
 const outUmdPath = path.resolve(__dirname, './dist/myView.js')
@@ -19,5 +20,6 @@ module.exports = {
       name: 'myView',
     },
   ],
-  plugins: [resolve()],
+  plugins: [resolve(), commonjs()],
+  external: ['vue'],
 }
