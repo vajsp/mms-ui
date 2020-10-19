@@ -4,7 +4,7 @@
   "description": "可视化组件库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rollup -wc rollup.config.dev.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,13 @@
     "url": "https://github.com/vajsp/myView/issues"
   },
   "homepage": "https://github.com/vajsp/myView#readme",
-  "dependencies": {
-    "rollup": "^2.32.0"
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "rollup": "^2.32.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "sam-test-data": "^0.0.5"
   }
 }
