@@ -5,11 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0-beta.15/dist/vue.global.js"></script>
   <script src="../dist/myView.js"></script>
 </head>
 
 <body>
-
+  <div id="app">
+    {{message}}
+    <test-com></test-com>
+  </div>
+  <script>
+    Vue.createApp({
+      setup() {
+        var message = 'hello'
+        return {
+          message
+        }
+      }
+    }).use(myView).mount('#app')
+    // var app = new Vue({
+    //   el: '#app',
+    //   data() {
+    //     return {
+    //       messgg: '123'
+    //     }
+    //   }
+    // })
+  </script>
 </body>
 
 </html>

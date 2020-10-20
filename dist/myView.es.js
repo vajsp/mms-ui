@@ -15,7 +15,7 @@ const _hoisted_1 = { class: "home" };
 popScopeId();
 
 const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (openBlock(), createBlock("div", _hoisted_1, "123"))
+  return (openBlock(), createBlock("div", _hoisted_1, "TestCom123"))
 });
 
 function styleInject(css, ref) {
@@ -53,7 +53,7 @@ script.__scopeId = "data-v-0f72a62a";
 script.__file = "src/test.vue";
 
 function index (Vue) {
-  Vue.component(script.name, Test);
+  Vue.component(script.name, script);
 }
 
 export default index;

@@ -2,11 +2,15 @@
   "name": "myview",
   "version": "1.0.0",
   "description": "可视化组件库",
-  "main": "index.js",
+  "main": "dist/myView.js",
   "scripts": {
     "dev": "rollup -wc rollup.config.dev.js",
     "build": "rollup -c rollup.config.dev.js"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vajsp/myView.git"

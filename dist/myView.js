@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('core-js/modules/es.function.name'), require('vue')) :
   typeof define === 'function' && define.amd ? define(['core-js/modules/es.function.name', 'vue'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.myView = factory(null, global.vue));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.myView = factory(null, global.Vue));
 }(this, (function (es_function_name, vue) { 'use strict';
 
   var script = {
@@ -18,7 +18,7 @@
   vue.popScopeId();
 
   const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createBlock("div", _hoisted_1, "123"))
+    return (vue.openBlock(), vue.createBlock("div", _hoisted_1, "TestCom123"))
   });
 
   function styleInject(css, ref) {
@@ -56,7 +56,7 @@
   script.__file = "src/test.vue";
 
   function index (Vue) {
-    Vue.component(script.name, Test);
+    Vue.component(script.name, script);
   }
 
   return index;

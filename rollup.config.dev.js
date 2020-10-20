@@ -17,10 +17,16 @@ module.exports = {
       file: outUmdPath,
       format: 'umd',
       name: 'myView',
+      globals: {
+        vue: 'Vue',
+      },
     },
     {
       file: outEsPath,
       format: 'es',
+      globals: {
+        vue: 'Vue',
+      },
     },
   ],
   plugins: [
