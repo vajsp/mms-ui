@@ -8,12 +8,23 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0-beta.15/dist/vue.global.js"></script> -->
   <script src="../dist/myView.js"></script>
+  <style>
+    html,
+    body,
+    #app {
+      width: 100%;
+      height: 100%;
+      /* overflow: hidden; */
+      padding: 0;
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    {{message}}
-    <test-com></test-com>
+    <main-container :out-size="{ width: 3840, height: 2140 }"> {{message}}<test-com></test-com>
+    </main-container>
   </div>
   <script>
     // Vue.createApp({

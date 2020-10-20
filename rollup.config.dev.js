@@ -37,10 +37,12 @@ module.exports = {
       exclude: 'node_modules/**',
       runtimeHelpers: true,
       plugins: [
-        '@babel/transform-runtime',
-        {
-          regenerator: true,
-        },
+        [
+          '@babel/transform-runtime',
+          {
+            regenerator: true,
+          },
+        ],
       ],
     }),
     json(),
