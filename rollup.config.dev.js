@@ -35,6 +35,7 @@ module.exports = {
     commonjs(),
     babel({
       exclude: 'node_modules/**',
+      runtimeHelpers: true,
       plugins: [
         '@babel/transform-runtime',
         {
