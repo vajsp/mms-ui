@@ -35,6 +35,12 @@ module.exports = {
     commonjs(),
     babel({
       exclude: 'node_modules/**',
+      plugins: [
+        '@babel/transform-runtime',
+        {
+          regenerator: true,
+        },
+      ],
     }),
     json(),
     vue(),
