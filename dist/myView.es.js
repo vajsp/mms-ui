@@ -53,6 +53,7 @@ script.__scopeId = "data-v-0f72a62a";
 script.__file = "src/test.vue";
 
 function index (Vue) {
+  // var a = 1
   Vue.component(script.name, script);
 }
 

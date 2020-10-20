@@ -4,9 +4,9 @@
   "description": "可视化组件库",
   "main": "dist/myView.js",
   "scripts": {
-    "dev": "rollup -wc rollup.config.dev.js",
-    "build": "rollup -c rollup.config.dev.js",
-    "lint": "eslint ./src"
+    "dev": " cross-env rollup -wc rollup.config.dev.js",
+    "build": "npm run lint && cross-env rollup -c rollup.config.dev.js",
+    "lint": "cross-env eslint ./src"
   },
   "files": [
     "dist",
@@ -27,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.10.4",
     "@babel/preset-env": "^7.10.2",
     "@vue/compiler-sfc": "^3.0.0-beta.15",
+    "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
     "eslint-plugin-vue": "^7.1.0",
     "less": "^3.12.2",

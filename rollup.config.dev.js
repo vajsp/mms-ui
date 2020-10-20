@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require('path')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')

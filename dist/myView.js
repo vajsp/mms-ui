@@ -56,6 +56,7 @@
   script.__file = "src/test.vue";
 
   function index (Vue) {
+    // var a = 1
     Vue.component(script.name, script);
   }
 
