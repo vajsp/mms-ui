@@ -1,11 +1,5 @@
-import * as data from 'sam-test-data'
+import test from './test.vue'
 
-console.log(data.random, data.a, data.b)
-
-let c = () => {
-  console.log(123)
+export default function (Vue) {
+  Vue.component(test.name, Test)
 }
-
-c()
-
-export default {}
