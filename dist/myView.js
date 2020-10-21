@@ -1,6 +1,6 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('core-js/modules/es.function.name'), require('core-js/modules/es.array.concat'), require('core-js/modules/es.object.to-string'), require('core-js/modules/es.promise')) :
-  typeof define === 'function' && define.amd ? define(['core-js/modules/es.function.name', 'core-js/modules/es.array.concat', 'core-js/modules/es.object.to-string', 'core-js/modules/es.promise'], factory) :
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('core-js/modules/es.function.name'), require('core-js/modules/es.array.concat'), require('core-js/modules/es.object.to-string'), require('core-js/modules/es.promise'), require('core-js/modules/es.date.to-string'), require('core-js/modules/es.number.constructor'), require('core-js/modules/es.parse-float'), require('core-js/modules/es.regexp.to-string')) :
+  typeof define === 'function' && define.amd ? define(['core-js/modules/es.function.name', 'core-js/modules/es.array.concat', 'core-js/modules/es.object.to-string', 'core-js/modules/es.promise', 'core-js/modules/es.date.to-string', 'core-js/modules/es.number.constructor', 'core-js/modules/es.parse-float', 'core-js/modules/es.regexp.to-string'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.myView = factory());
 }(this, (function () { 'use strict';
 
@@ -9,7 +9,7 @@
   //
   //
   var script = {
-    name: 'TestCom',
+    name: 'MmTestCom',
     mounted: function mounted() {
       console.log(123);
     }
@@ -151,7 +151,7 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", { staticClass: "home" }, [_vm._v("TestCom123")])
+    return _c("div", { staticClass: "mm-home" }, [_vm._v("TestCom123")])
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;
@@ -159,11 +159,11 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-1f93a758_0", { source: ".home[data-v-1f93a758] {\n  background: yellow;\n}\n", map: {"version":3,"sources":["Test.vue"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB","file":"Test.vue","sourcesContent":[".home {\n  background: yellow;\n}\n"]}, media: undefined });
+      inject("data-v-5e140258_0", { source: ".mm-home[data-v-5e140258] {\n  background: yellow;\n}\n", map: {"version":3,"sources":["Test.vue"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB","file":"Test.vue","sourcesContent":[".mm-home {\n  background: yellow;\n}\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__ = "data-v-1f93a758";
+    const __vue_scope_id__ = "data-v-5e140258";
     /* module identifier */
     const __vue_module_identifier__ = undefined;
     /* functional template */
@@ -186,6 +186,17 @@
       undefined,
       undefined
     );
+
+  function Test (Vue) {
+    // var a = 1
+    Vue.component(__vue_component__.name, __vue_component__);
+  }
+
+  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+  function unwrapExports (x) {
+  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+  }
 
   function createCommonjsModule(fn, module) {
   	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -1242,7 +1253,7 @@
   };
 
   var script$1 = {
-    name: 'MainContainer',
+    name: 'MmMainContainer',
     props: {
       outSize: {
         type: Object,
@@ -1384,7 +1395,7 @@
     var _c = _vm._self._c || _h;
     return _c(
       "div",
-      { ref: "container", staticClass: "container" },
+      { ref: "container", staticClass: "mm-main-container" },
       [_vm._t("default")],
       2
     )
@@ -1395,11 +1406,11 @@
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-2657699f_0", { source: ".container[data-v-2657699f] {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n", map: {"version":3,"sources":["MainContainer.vue"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,0BAA0B;EAC1B,gBAAgB;EAChB,eAAe;EACf,MAAM;EACN,OAAO;EACP,sBAAsB;AACxB","file":"MainContainer.vue","sourcesContent":[".container {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n"]}, media: undefined });
+      inject("data-v-0ab59ebf_0", { source: ".mm-main-container[data-v-0ab59ebf] {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n", map: {"version":3,"sources":["MainContainer.vue"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,0BAA0B;EAC1B,gBAAgB;EAChB,eAAe;EACf,MAAM;EACN,OAAO;EACP,sBAAsB;AACxB","file":"MainContainer.vue","sourcesContent":[".mm-main-container {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-2657699f";
+    const __vue_scope_id__$1 = "data-v-0ab59ebf";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */
@@ -1423,10 +1434,164 @@
       undefined
     );
 
-  function index (Vue) {
-    Vue.component(__vue_component__.name, __vue_component__);
+  function MainContainer (Vue) {
+    // var a = 1
     Vue.component(__vue_component__$1.name, __vue_component__$1);
   }
+
+  var vueCountTo_min = createCommonjsModule(function (module, exports) {
+  !function(t,e){module.exports=e();}(commonjsGlobal,function(){return function(t){function e(n){if(i[n])return i[n].exports;var a=i[n]={i:n,l:!1,exports:{}};return t[n].call(a.exports,a,a.exports,e),a.l=!0,a.exports}var i={};return e.m=t,e.c=i,e.i=function(t){return t},e.d=function(t,i,n){e.o(t,i)||Object.defineProperty(t,i,{configurable:!1,enumerable:!0,get:n});},e.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(i,"a",i),i},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/dist/",e(e.s=2)}([function(t,e,i){var n=i(4)(i(1),i(5),null,null);t.exports=n.exports;},function(t,e,i){Object.defineProperty(e,"__esModule",{value:!0});var n=i(3);e.default={props:{startVal:{type:Number,required:!1,default:0},endVal:{type:Number,required:!1,default:2017},duration:{type:Number,required:!1,default:3e3},autoplay:{type:Boolean,required:!1,default:!0},decimals:{type:Number,required:!1,default:0,validator:function(t){return t>=0}},decimal:{type:String,required:!1,default:"."},separator:{type:String,required:!1,default:","},prefix:{type:String,required:!1,default:""},suffix:{type:String,required:!1,default:""},useEasing:{type:Boolean,required:!1,default:!0},easingFn:{type:Function,default:function(t,e,i,n){return i*(1-Math.pow(2,-10*t/n))*1024/1023+e}}},data:function(){return {localStartVal:this.startVal,displayValue:this.formatNumber(this.startVal),printVal:null,paused:!1,localDuration:this.duration,startTime:null,timestamp:null,remaining:null,rAF:null}},computed:{countDown:function(){return this.startVal>this.endVal}},watch:{startVal:function(){this.autoplay&&this.start();},endVal:function(){this.autoplay&&this.start();}},mounted:function(){this.autoplay&&this.start(),this.$emit("mountedCallback");},methods:{start:function(){this.localStartVal=this.startVal,this.startTime=null,this.localDuration=this.duration,this.paused=!1,this.rAF=(0, n.requestAnimationFrame)(this.count);},pauseResume:function(){this.paused?(this.resume(),this.paused=!1):(this.pause(),this.paused=!0);},pause:function(){(0, n.cancelAnimationFrame)(this.rAF);},resume:function(){this.startTime=null,this.localDuration=+this.remaining,this.localStartVal=+this.printVal,(0, n.requestAnimationFrame)(this.count);},reset:function(){this.startTime=null,(0, n.cancelAnimationFrame)(this.rAF),this.displayValue=this.formatNumber(this.startVal);},count:function(t){this.startTime||(this.startTime=t),this.timestamp=t;var e=t-this.startTime;this.remaining=this.localDuration-e,this.useEasing?this.countDown?this.printVal=this.localStartVal-this.easingFn(e,0,this.localStartVal-this.endVal,this.localDuration):this.printVal=this.easingFn(e,this.localStartVal,this.endVal-this.localStartVal,this.localDuration):this.countDown?this.printVal=this.localStartVal-(this.localStartVal-this.endVal)*(e/this.localDuration):this.printVal=this.localStartVal+(this.localStartVal-this.startVal)*(e/this.localDuration),this.countDown?this.printVal=this.printVal<this.endVal?this.endVal:this.printVal:this.printVal=this.printVal>this.endVal?this.endVal:this.printVal,this.displayValue=this.formatNumber(this.printVal),e<this.localDuration?this.rAF=(0, n.requestAnimationFrame)(this.count):this.$emit("callback");},isNumber:function(t){return !isNaN(parseFloat(t))},formatNumber:function(t){t=t.toFixed(this.decimals),t+="";var e=t.split("."),i=e[0],n=e.length>1?this.decimal+e[1]:"",a=/(\d+)(\d{3})/;if(this.separator&&!this.isNumber(this.separator))for(;a.test(i);)i=i.replace(a,"$1"+this.separator+"$2");return this.prefix+i+n+this.suffix}},destroyed:function(){(0, n.cancelAnimationFrame)(this.rAF);}};},function(t,e,i){Object.defineProperty(e,"__esModule",{value:!0});var n=i(0),a=function(t){return t&&t.__esModule?t:{default:t}}(n);e.default=a.default,"undefined"!=typeof window&&window.Vue&&window.Vue.component("count-to",a.default);},function(t,e,i){Object.defineProperty(e,"__esModule",{value:!0});var n=0,a="webkit moz ms o".split(" "),r=void 0,o=void 0;if("undefined"==typeof window)e.requestAnimationFrame=r=function(){},e.cancelAnimationFrame=o=function(){};else {e.requestAnimationFrame=r=window.requestAnimationFrame,e.cancelAnimationFrame=o=window.cancelAnimationFrame;for(var s=void 0,u=0;u<a.length&&(!r||!o);u++)s=a[u],e.requestAnimationFrame=r=r||window[s+"RequestAnimationFrame"],e.cancelAnimationFrame=o=o||window[s+"CancelAnimationFrame"]||window[s+"CancelRequestAnimationFrame"];r&&o||(e.requestAnimationFrame=r=function(t){var e=(new Date).getTime(),i=Math.max(0,16-(e-n)),a=window.setTimeout(function(){t(e+i);},i);return n=e+i,a},e.cancelAnimationFrame=o=function(t){window.clearTimeout(t);});}e.requestAnimationFrame=r,e.cancelAnimationFrame=o;},function(t,e){t.exports=function(t,e,i,n){var a,r=t=t||{},o=typeof t.default;"object"!==o&&"function"!==o||(a=t,r=t.default);var s="function"==typeof r?r.options:r;if(e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),i&&(s._scopeId=i),n){var u=Object.create(s.computed||null);Object.keys(n).forEach(function(t){var e=n[t];u[t]=function(){return e};}),s.computed=u;}return {esModule:a,exports:r,options:s}};},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement;return (t._self._c||e)("span",[t._v("\n  "+t._s(t.displayValue)+"\n")])},staticRenderFns:[]};}])});
+
+  });
+
+  var countTo = unwrapExports(vueCountTo_min);
+  var vueCountTo_min_1 = vueCountTo_min.CountTo;
+
+  var script$2 = {
+    name: 'MmCountTo',
+    props: {
+      separator: {
+        "default": true
+      },
+      value: {
+        type: Number,
+        "default": 60
+      }
+    },
+    components: {
+      countTo: countTo
+    },
+    computed: {
+      separatorPlus: function separatorPlus() {
+        if (this.separator) {
+          return '.';
+        } else {
+          return '';
+        }
+      },
+      valueNum: function valueNum() {
+        return Number(this.value);
+      }
+    },
+    data: function data() {
+      return {
+        startVal: 0,
+        endVal: 0,
+        widthSpan: '8px',
+        rootPx: 9
+      };
+    },
+    created: function created() {
+      this.endVal = this.valueNum;
+    },
+    mounted: function mounted() {
+      this.setSpanWidth();
+    },
+    methods: {
+      setSpanWidth: function setSpanWidth() {
+        // 通过字体大小来算出滚动数字固定的宽度，防止后面的单位抖动
+        // 取16px数字字体作为参照
+        var fontSize = parseFloat(getComputedStyle(this.$refs.domCount, null)['fontSize']);
+        this.widthSpan = fontSize / 16 * this.rootPx * this.value.toString().length + 'px';
+      }
+    },
+    watch: {
+      valueNum: function valueNum(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.startVal = oldVal;
+          this.endVal = newVal;
+          this.setSpanWidth();
+        }
+      }
+    }
+  };
+
+  /* script */
+  const __vue_script__$2 = script$2;
+
+  /* template */
+  var __vue_render__$2 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "span",
+      { ref: "domCount", staticClass: "mm-count-to" },
+      [
+        _c("countTo", {
+          style: { width: _vm.widthSpan },
+          attrs: {
+            startVal: _vm.startVal,
+            endVal: _vm.value,
+            separator: _vm.separatorPlus,
+            duration: 2000
+          }
+        })
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$2 = [];
+  __vue_render__$2._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$2 = function (inject) {
+      if (!inject) return
+      inject("data-v-6a7a98b3_0", { source: ".mm-count-to[data-v-6a7a98b3] {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span[data-v-6a7a98b3] {\n  display: inline-block;\n  text-align: center;\n}\n", map: {"version":3,"sources":["CountTo.vue"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,qBAAqB;AACvB;AACA;EACE,qBAAqB;EACrB,kBAAkB;AACpB","file":"CountTo.vue","sourcesContent":[".mm-count-to {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span {\n  display: inline-block;\n  text-align: center;\n}\n"]}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$2 = "data-v-6a7a98b3";
+    /* module identifier */
+    const __vue_module_identifier__$2 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$2 = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$2 = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+      __vue_inject_styles__$2,
+      __vue_script__$2,
+      __vue_scope_id__$2,
+      __vue_is_functional_template__$2,
+      __vue_module_identifier__$2,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  function CountTo (Vue) {
+    // var a = 1
+    Vue.component(__vue_component__$2.name, __vue_component__$2);
+  }
+
+  var index = {
+    install: function install(Vue) {
+      Test(Vue);
+      MainContainer(Vue);
+      CountTo(Vue);
+    },
+    Test: {
+      install: function install(Vue) {
+        Test(Vue);
+      }
+    },
+    MainContainer: {
+      install: function install(Vue) {
+        MainContainer(Vue);
+      }
+    },
+    CountTo: {
+      install: function install(Vue) {
+        CountTo(Vue);
+      }
+    }
+  };
 
   return index;
 

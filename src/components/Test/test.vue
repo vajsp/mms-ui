@@ -1,10 +1,10 @@
 <template>
-  <div class="home">TestCom123</div>
+  <div class="mm-home">TestCom123</div>
 </template>
 
 <script>
 export default {
-  name: 'TestCom',
+  name: 'MmTestCom',
   mounted() {
     console.log(123)
   }
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.home {
+.mm-home {
   background: yellow;
 }
 </style>

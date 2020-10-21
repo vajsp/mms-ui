@@ -1,5 +1,5 @@
 <template>
-  <div class="container" ref="container">
+  <div class="mm-main-container" ref="container">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
 import tools from '../../utils'
 
 export default {
-  name: 'MainContainer',
+  name: 'MmMainContainer',
   props: {
     outSize: {
       type: Object,
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.container {
+.mm-main-container {
   border: 3px solid green;
   transform-origin: top left;
   overflow: hidden;
