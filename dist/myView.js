@@ -1,6 +1,6 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('core-js/modules/es.function.name'), require('core-js/modules/es.array.concat'), require('core-js/modules/es.object.to-string'), require('core-js/modules/es.promise'), require('core-js/modules/es.date.to-string'), require('core-js/modules/es.number.constructor'), require('core-js/modules/es.parse-float'), require('core-js/modules/es.regexp.to-string')) :
-  typeof define === 'function' && define.amd ? define(['core-js/modules/es.function.name', 'core-js/modules/es.array.concat', 'core-js/modules/es.object.to-string', 'core-js/modules/es.promise', 'core-js/modules/es.date.to-string', 'core-js/modules/es.number.constructor', 'core-js/modules/es.parse-float', 'core-js/modules/es.regexp.to-string'], factory) :
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('core-js/modules/es.function.name'), require('core-js/modules/es.array.concat'), require('core-js/modules/es.object.to-string'), require('core-js/modules/es.promise'), require('core-js/modules/es.date.to-string'), require('core-js/modules/es.number.constructor'), require('core-js/modules/es.parse-float'), require('core-js/modules/es.regexp.to-string'), require('core-js/modules/es.array.join'), require('core-js/modules/es.array.map'), require('core-js/modules/es.array.reverse'), require('core-js/modules/es.regexp.exec'), require('core-js/modules/es.string.replace'), require('core-js/modules/es.string.split')) :
+  typeof define === 'function' && define.amd ? define(['core-js/modules/es.function.name', 'core-js/modules/es.array.concat', 'core-js/modules/es.object.to-string', 'core-js/modules/es.promise', 'core-js/modules/es.date.to-string', 'core-js/modules/es.number.constructor', 'core-js/modules/es.parse-float', 'core-js/modules/es.regexp.to-string', 'core-js/modules/es.array.join', 'core-js/modules/es.array.map', 'core-js/modules/es.array.reverse', 'core-js/modules/es.regexp.exec', 'core-js/modules/es.string.replace', 'core-js/modules/es.string.split'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.myView = factory());
 }(this, (function () { 'use strict';
 
@@ -1406,11 +1406,11 @@
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-0ab59ebf_0", { source: ".mm-main-container[data-v-0ab59ebf] {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n", map: {"version":3,"sources":["MainContainer.vue"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,0BAA0B;EAC1B,gBAAgB;EAChB,eAAe;EACf,MAAM;EACN,OAAO;EACP,sBAAsB;AACxB","file":"MainContainer.vue","sourcesContent":[".mm-main-container {\n  border: 3px solid green;\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n"]}, media: undefined });
+      inject("data-v-45cfc5a6_0", { source: ".mm-main-container[data-v-45cfc5a6] {\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n", map: {"version":3,"sources":["MainContainer.vue"],"names":[],"mappings":"AAAA;EACE,0BAA0B;EAC1B,gBAAgB;EAChB,eAAe;EACf,MAAM;EACN,OAAO;EACP,sBAAsB;AACxB","file":"MainContainer.vue","sourcesContent":[".mm-main-container {\n  transform-origin: top left;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n}\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-0ab59ebf";
+    const __vue_scope_id__$1 = "data-v-45cfc5a6";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */
@@ -1598,11 +1598,219 @@
     Vue.component(__vue_component__$2.name, __vue_component__$2);
   }
 
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var script$3 = {
+    name: 'MmCountUp',
+    props: ['value', 'fontSize', 'fontWidth'],
+    data: function data() {
+      return {
+        currentData: '0',
+        lastData: '0'
+      };
+    },
+    mounted: function mounted() {
+      this.getNum(this.value || 0);
+    },
+    computed: {
+      numbers: function numbers() {
+        var value = this.value;
+
+        if (!value) {
+          return;
+        }
+
+        value = this.dealData(value);
+        return value;
+      }
+    },
+    watch: {
+      data: function data(val) {
+        this.getNum(val);
+      }
+    },
+    methods: {
+      getNum: function getNum(val) {
+        var _this = this;
+
+        var newData = this.dealData(val);
+        this.currentData = newData.replace(/\d/g, '0').split('').reverse().map(function (s, i) {
+          return _this.currentData.split('').reverse()[i] || s;
+        }).reverse().join('');
+        setTimeout(function () {
+          _this.lastData = _this.currentData;
+          _this.currentData = newData;
+        }, 100);
+      },
+      ulStyles: function ulStyles(item, key) {
+        var top = 0;
+        var currentTop = -6.1 * Number(item);
+        top = currentTop + 'vh';
+        var lastItem = this.lastData[key];
+        return {
+          transform: "translate(0, ".concat(top, ")"),
+          transition: "".concat(Math.abs(lastItem - item) / 5, "s")
+        };
+      },
+      isNum: function isNum(val) {
+        return val == ',' ? false : true;
+      },
+      dealData: function dealData(val) {
+        var vals = val.toString().split('').reverse();
+        var dealData = [];
+
+        for (var i = 0; i < vals.length; i++) {
+          if (i > 0 && i % 3 == 0) {
+            dealData.push(',');
+          }
+
+          dealData.push(vals[i]);
+        }
+
+        dealData = dealData.reverse().join('');
+        return dealData;
+      }
+    }
+  };
+
+  /* script */
+  const __vue_script__$3 = script$3;
+
+  /* template */
+  var __vue_render__$3 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "mm-count-up" }, [
+      _c("div", { staticClass: "num-block" }, [
+        _c(
+          "div",
+          { staticClass: "num-block_show" },
+          _vm._l(_vm.currentData, function(item, key) {
+            return _c(
+              "div",
+              {
+                key: _vm.currentData.length - key,
+                staticClass: "num-block_numbers",
+                class: { ellipsis: !_vm.isNum(item) }
+              },
+              [
+                _vm.isNum(item)
+                  ? _c(
+                      "ul",
+                      {
+                        staticClass: "num-block_ul",
+                        style: _vm.ulStyles(item, key)
+                      },
+                      [
+                        _c("li", [_vm._v("0")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("1")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("2")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("3")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("4")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("5")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("6")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("7")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("8")]),
+                        _vm._v(" "),
+                        _c("li", [_vm._v("9")])
+                      ]
+                    )
+                  : _c("div", { staticClass: "num-block_ellipsis" }, [
+                      _vm._v(",")
+                    ])
+              ]
+            )
+          }),
+          0
+        )
+      ])
+    ])
+  };
+  var __vue_staticRenderFns__$3 = [];
+  __vue_render__$3._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$3 = function (inject) {
+      if (!inject) return
+      inject("data-v-5ad39c56_0", { source: ".mm-count-up .num-block {\n  width: 100%;\n  height: auto;\n}\n.mm-count-up .num-block .num-block_show {\n  display: flex;\n  height: 5.9vh;\n  overflow: hidden;\n  font-size: 5.9vh;\n}\n.mm-count-up .num-block .num-block_numbers {\n  position: relative;\n  font-family: 'DIN Condensed';\n}\n.mm-count-up .num-block .textcolor {\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.mm-count-up .num-block .num-block_ul {\n  transform: translate(0, 0);\n  position: relative;\n  left: 0;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  transition: 1s;\n}\n.mm-count-up .num-block .num-block_ul > li {\n  height: 5.9vh;\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.mm-count-up .num-block .num-block_ellipsis {\n  position: relative;\n  height: 5.9vh;\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n", map: {"version":3,"sources":["CountUp.vue"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;AACd;AACA;EACE,aAAa;EACb,aAAa;EACb,gBAAgB;EAChB,gBAAgB;AAClB;AACA;EACE,kBAAkB;EAClB,4BAA4B;AAC9B;AACA;EACE,mDAAmD;EACnD,6BAA6B;EAC7B,qBAAqB;EACrB,oCAAoC;AACtC;AACA;EACE,0BAA0B;EAC1B,kBAAkB;EAClB,OAAO;EACP,gBAAgB;EAChB,UAAU;EACV,SAAS;EACT,cAAc;AAChB;AACA;EACE,aAAa;EACb,mDAAmD;EACnD,6BAA6B;EAC7B,qBAAqB;EACrB,oCAAoC;AACtC;AACA;EACE,kBAAkB;EAClB,aAAa;EACb,mDAAmD;EACnD,6BAA6B;EAC7B,qBAAqB;EACrB,oCAAoC;AACtC","file":"CountUp.vue","sourcesContent":[".mm-count-up .num-block {\n  width: 100%;\n  height: auto;\n}\n.mm-count-up .num-block .num-block_show {\n  display: flex;\n  height: 5.9vh;\n  overflow: hidden;\n  font-size: 5.9vh;\n}\n.mm-count-up .num-block .num-block_numbers {\n  position: relative;\n  font-family: 'DIN Condensed';\n}\n.mm-count-up .num-block .textcolor {\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.mm-count-up .num-block .num-block_ul {\n  transform: translate(0, 0);\n  position: relative;\n  left: 0;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  transition: 1s;\n}\n.mm-count-up .num-block .num-block_ul > li {\n  height: 5.9vh;\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n.mm-count-up .num-block .num-block_ellipsis {\n  position: relative;\n  height: 5.9vh;\n  background-image: linear-gradient(#27e1ff, #8affe2);\n  -webkit-background-clip: text;\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n"]}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$3 = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$3 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$3 = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$3 = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+      __vue_inject_styles__$3,
+      __vue_script__$3,
+      __vue_scope_id__$3,
+      __vue_is_functional_template__$3,
+      __vue_module_identifier__$3,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  function CountUp (Vue) {
+    // var a = 1
+    Vue.component(__vue_component__$3.name, __vue_component__$3);
+  }
+
   var index = {
     install: function install(Vue) {
       Test(Vue);
       MainContainer(Vue);
       CountTo(Vue);
+      CountUp(Vue);
     },
     Test: {
       install: function install(Vue) {
@@ -1617,6 +1825,11 @@
     CountTo: {
       install: function install(Vue) {
         CountTo(Vue);
+      }
+    },
+    CountUp: {
+      install: function install(Vue) {
+        CountUp(Vue);
       }
     }
   };

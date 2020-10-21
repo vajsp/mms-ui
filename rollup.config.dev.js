@@ -6,6 +6,7 @@ const babel = require('rollup-plugin-babel')
 const json = require('rollup-plugin-json')
 const vue = require('rollup-plugin-vue')
 const postcss = require('rollup-plugin-postcss')
+const autoprefixer = require('autoprefixer')
 
 const inputPath = path.resolve(__dirname, './src/index.js')
 const outUmdPath = path.resolve(__dirname, './dist/myView.js')
@@ -19,16 +20,16 @@ module.exports = {
       format: 'umd',
       name: 'myView',
       globals: {
-        vue: 'Vue',
-      },
+        vue: 'Vue'
+      }
     },
     {
       file: outEsPath,
       format: 'es',
       globals: {
-        vue: 'Vue',
-      },
-    },
+        vue: 'Vue'
+      }
+    }
   ],
   plugins: [
     resolve(),
@@ -40,16 +41,20 @@ module.exports = {
         [
           '@babel/transform-runtime',
           {
-            regenerator: true,
-          },
-        ],
-      ],
+            regenerator: true
+          }
+        ]
+      ]
     }),
     json(),
     vue(),
     postcss({
-      plugins: [],
-    }),
+      plugins: [
+        autoprefixer({
+          overrideBrowserslist: ['last 2 version', '>1%', 'ios 7']
+        })
+      ]
+    })
   ],
-  external: ['vue', 'core-js'],
+  external: ['vue', 'core-js']
 }

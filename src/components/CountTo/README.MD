@@ -5,5 +5,5 @@
 ### 1.使用
 
 ```
-<mm-count-to :value="9"></mm-count-to>
+<mm-count-to :value="956"></mm-count-to>
 ```
