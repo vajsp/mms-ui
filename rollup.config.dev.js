@@ -9,8 +9,8 @@ const postcss = require('rollup-plugin-postcss')
 const autoprefixer = require('autoprefixer')
 
 const inputPath = path.resolve(__dirname, './src/index.js')
-const outUmdPath = path.resolve(__dirname, './dist/myView.js')
-const outEsPath = path.resolve(__dirname, './dist/myView.es.js')
+const outUmdPath = path.resolve(__dirname, './lib/myView.js')
+const outEsPath = path.resolve(__dirname, './lib/myView.es.js')
 
 module.exports = {
   input: inputPath,
