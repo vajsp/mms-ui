@@ -105,7 +105,7 @@ export default {
 <style lang="less" scoped>
 .mm-count-to {
   display: inline-block;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   span {
     display: inline-block;

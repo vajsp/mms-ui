@@ -1565,11 +1565,11 @@
     /* style */
     const __vue_inject_styles__$2 = function (inject) {
       if (!inject) return
-      inject("data-v-08f7c21a_0", { source: ".mm-count-to[data-v-08f7c21a] {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span[data-v-08f7c21a] {\n  display: inline-block;\n  text-align: center;\n}\n", map: {"version":3,"sources":["CountTo.vue"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,qBAAqB;AACvB;AACA;EACE,qBAAqB;EACrB,kBAAkB;AACpB","file":"CountTo.vue","sourcesContent":[".mm-count-to {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span {\n  display: inline-block;\n  text-align: center;\n}\n"]}, media: undefined });
+      inject("data-v-45380c01_0", { source: ".mm-count-to[data-v-45380c01] {\n  display: inline-block;\n}\n.mm-count-to span[data-v-45380c01] {\n  display: inline-block;\n  text-align: center;\n}\n", map: {"version":3,"sources":["CountTo.vue"],"names":[],"mappings":"AAAA;EACE,qBAAqB;AACvB;AACA;EACE,qBAAqB;EACrB,kBAAkB;AACpB","file":"CountTo.vue","sourcesContent":[".mm-count-to {\n  display: inline-block;\n}\n.mm-count-to span {\n  display: inline-block;\n  text-align: center;\n}\n"]}, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-08f7c21a";
+    const __vue_scope_id__$2 = "data-v-45380c01";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */
