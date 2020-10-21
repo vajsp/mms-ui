@@ -9,8 +9,8 @@ const postcss = require('rollup-plugin-postcss')
 const autoprefixer = require('autoprefixer')
 
 const inputPath = path.resolve(__dirname, './src/index.js')
-const outUmdPath = path.resolve(__dirname, './lib/mm-ui.js')
-const outEsPath = path.resolve(__dirname, './lib/mm-ui.es.js')
+const outUmdPath = path.resolve(__dirname, './lib/mms-ui.js')
+const outEsPath = path.resolve(__dirname, './lib/mms-ui.es.js')
 
 module.exports = {
   input: inputPath,
@@ -18,7 +18,7 @@ module.exports = {
     {
       file: outUmdPath,
       format: 'umd',
-      name: 'mm-ui',
+      name: 'mms-ui',
       globals: {
         vue: 'Vue'
       }

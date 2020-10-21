@@ -1,5 +1,5 @@
 {
-  "name": "mm-ui",
+  "name": "mms-ui",
   "version": "1.0.0",
   "description": "可视化组件库",
   "main": "dist/myView.js",
@@ -9,7 +9,7 @@
     "lint": "cross-env eslint ./src"
   },
   "files": [
-    "dist",
+    "lib",
     "src"
   ],
   "repository": {
