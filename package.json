@@ -1,5 +1,5 @@
 {
-  "name": "myview",
+  "name": "mm-ui",
   "version": "1.0.0",
   "description": "可视化组件库",
   "main": "dist/myView.js",
