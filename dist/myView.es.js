@@ -1453,6 +1453,10 @@ var vueCountTo_min_1 = vueCountTo_min.CountTo;
 var script$2 = {
   name: 'MmCountTo',
   props: {
+    duration: {
+      type: Number,
+      "default": 1500
+    },
     separator: {
       "default": true
     },
@@ -1495,15 +1499,36 @@ var script$2 = {
       // 通过字体大小来算出滚动数字固定的宽度，防止后面的单位抖动
       // 取16px数字字体作为参照
       var fontSize = parseFloat(getComputedStyle(this.$refs.domCount, null)['fontSize']);
-      this.widthSpan = fontSize / 16 * this.rootPx * this.value.toString().length + 'px';
+      var valueLength = this.value.toString().length;
+      var separatorNum = 3;
+      this.widthSpan = fontSize / 16 * this.rootPx * valueLength;
+
+      if (this.separator && valueLength > separatorNum) {
+        // 有分隔符时添加分隔符占的宽度
+        var pointNum = Math.floor(valueLength / separatorNum);
+        this.widthSpan = this.widthSpan + pointNum * 3.5;
+      }
+
+      this.widthSpan = this.widthSpan + 'px';
     }
   },
   watch: {
     valueNum: function valueNum(newVal, oldVal) {
+      var _this = this;
+
       if (newVal !== oldVal) {
         this.startVal = oldVal;
-        this.endVal = newVal;
-        this.setSpanWidth();
+        this.endVal = newVal; // this.setSpanWidth()
+
+        if (newVal > oldVal) {
+          setTimeout(function () {
+            _this.setSpanWidth();
+          });
+        } else {
+          setTimeout(function () {
+            _this.setSpanWidth();
+          }, this.duration);
+        }
       }
     }
   }
@@ -1522,12 +1547,15 @@ var __vue_render__$2 = function() {
     { ref: "domCount", staticClass: "mm-count-to" },
     [
       _c("countTo", {
-        style: { width: _vm.widthSpan },
+        style: {
+          width: _vm.widthSpan,
+          transition: "all  " + 0.2 + "s"
+        },
         attrs: {
           startVal: _vm.startVal,
           endVal: _vm.value,
           separator: _vm.separatorPlus,
-          duration: 2000
+          duration: _vm.duration
         }
       })
     ],
@@ -1540,11 +1568,11 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = function (inject) {
     if (!inject) return
-    inject("data-v-6a7a98b3_0", { source: ".mm-count-to[data-v-6a7a98b3] {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span[data-v-6a7a98b3] {\n  display: inline-block;\n  text-align: center;\n}\n", map: {"version":3,"sources":["CountTo.vue"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,qBAAqB;AACvB;AACA;EACE,qBAAqB;EACrB,kBAAkB;AACpB","file":"CountTo.vue","sourcesContent":[".mm-count-to {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span {\n  display: inline-block;\n  text-align: center;\n}\n"]}, media: undefined });
+    inject("data-v-08f7c21a_0", { source: ".mm-count-to[data-v-08f7c21a] {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span[data-v-08f7c21a] {\n  display: inline-block;\n  text-align: center;\n}\n", map: {"version":3,"sources":["CountTo.vue"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,qBAAqB;AACvB;AACA;EACE,qBAAqB;EACrB,kBAAkB;AACpB","file":"CountTo.vue","sourcesContent":[".mm-count-to {\n  display: inline-block;\n  border: 1px solid red;\n}\n.mm-count-to span {\n  display: inline-block;\n  text-align: center;\n}\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-6a7a98b3";
+  const __vue_scope_id__$2 = "data-v-08f7c21a";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */

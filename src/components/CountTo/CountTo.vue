@@ -4,8 +4,11 @@
       :startVal="startVal"
       :endVal="value"
       :separator="separatorPlus"
-      :duration="2000"
-      :style="{ width: widthSpan }"
+      :duration="duration"
+      :style="{
+        width: widthSpan,
+        transition: `all  ${0.2}s`
+      }"
     ></countTo>
   </span>
 </template>
@@ -16,6 +19,10 @@ import countTo from 'vue-count-to'
 export default {
   name: 'MmCountTo',
   props: {
+    duration: {
+      type: Number,
+      default: 1500
+    },
     separator: {
       default: true
     },
@@ -60,8 +67,18 @@ export default {
         getComputedStyle(this.$refs.domCount, null)['fontSize']
       )
 
-      this.widthSpan =
-        (fontSize / 16) * this.rootPx * this.value.toString().length + 'px'
+      var valueLength = this.value.toString().length
+      var separatorNum = 3
+
+      this.widthSpan = (fontSize / 16) * this.rootPx * valueLength
+
+      if (this.separator && valueLength > separatorNum) {
+        // 有分隔符时添加分隔符占的宽度
+        var pointNum = Math.floor(valueLength / separatorNum)
+        this.widthSpan = this.widthSpan + pointNum * 3.5
+      }
+
+      this.widthSpan = this.widthSpan + 'px'
     }
   },
   watch: {
@@ -69,7 +86,16 @@ export default {
       if (newVal !== oldVal) {
         this.startVal = oldVal
         this.endVal = newVal
-        this.setSpanWidth()
+        // this.setSpanWidth()
+        if (newVal > oldVal) {
+          setTimeout(() => {
+            this.setSpanWidth()
+          })
+        } else {
+          setTimeout(() => {
+            this.setSpanWidth()
+          }, this.duration)
+        }
       }
     }
   }
