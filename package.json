@@ -2,7 +2,7 @@
   "name": "mms-ui",
   "version": "1.0.1",
   "description": "可视化组件库",
-  "main": "dist/myView.js",
+  "main": "lib/mms-ui.js",
   "scripts": {
     "dev": " cross-env rollup -wc rollup.config.dev.js",
     "build": "npm run lint && cross-env rollup -c rollup.config.dev.js",
