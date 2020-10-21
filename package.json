@@ -1,6 +1,6 @@
 {
   "name": "mms-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "可视化组件库",
   "main": "dist/myView.js",
   "scripts": {
