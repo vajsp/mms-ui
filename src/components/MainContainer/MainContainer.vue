@@ -105,7 +105,7 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  border: 3px solid red;
+  border: 3px solid green;
   transform-origin: top left;
   overflow: hidden;
   position: fixed;

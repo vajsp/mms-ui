@@ -13,6 +13,6 @@ export default {
 
 <style lang="less" scoped>
 .home {
-  background: red;
+  background: yellow;
 }
 </style>
